@@ -78,9 +78,30 @@ top_song_by_time <- clean_stream %>%
 
 # Exploratory Analyses - By Month ---------------------------------------------------
 
+## Is there a difference in the type of music that I listen to at different points in the year?
+
+## What are my top tracks for each month? top artists? 
+
 #-----------------------------------------------------------------------------------#
 
 
 # Exploratory Analyses - By Day of Week ---------------------------------------------
 
-# Exploratory Analyses - 
+## What day of the week do I listen to music the most?
+
+## Is there a difference in the type of music that I listen to on different days of the week? -- might have to wait for extended data
+
+## What are top bands/tracks by day of week?
+
+#-----------------------------------------------------------------------------------#
+
+#==================================================================================================================================#
+# NOTES:                                                                                                                           #
+# is there a way to plot mood of music in one visual and then have a visual with weather on that day right below for reference?    #
+#     maybe some sort of overlay??                                                                                                 #
+#         What do I listen to on rainy days? What about sunny days? hot/cold?                                                      #
+#==================================================================================================================================#
+
+# Remove df/objects that are no longer needed ---------------------------------------
+rm()
+#-----------------------------------------------------------------------------------#
