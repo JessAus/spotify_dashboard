@@ -5,8 +5,8 @@
 #####################################################################################
 
 # Load req. packages
-pacman::p_load(tidyverse, jsonlite)
+pacman::p_load(tidyverse, jsonlite, janitor)
 
-# Read in data
-raw_streaming_history <- fromJSON("data/StreamingHistory0.json", flatten=TRUE)
-
+# Read in data & clean column names
+raw_stream <- fromJSON("data/StreamingHistory0.json", flatten=TRUE) %>%
+  clean_names()
