@@ -3,3 +3,46 @@
 # Author: Jessie Ausman                                                             #
 # Purpose: Create Visuals - Spotify data                                            #
 #####################################################################################
+
+# Total time listened per month heat map --------------------------------------------
+
+#-----------------------------------------------------------------------------------#
+
+# Top 5 for 2023 --------------------------------------------------------------------
+
+## Artists
+
+## Tracks
+
+#-----------------------------------------------------------------------------------#
+
+# Top 5 per month -------------------------------------------------------------------
+
+## Artists
+viz3 <- top_artists_by_month %>%
+  ungroup() %>%
+  group_by(month) %>%
+  e_chart(artist_name, timeline = TRUE) %>%
+  e_pie(plays_by_artist) %>%
+  e_legend(show = FALSE) %>%
+  e_tooltip()
+
+## Tracks
+viz4 <- top_tracks_by_month %>%
+  ungroup() %>%
+  group_by(month) %>%
+  e_chart(track_name, timeline = TRUE) %>%
+  e_pie(plays_by_track) %>%
+  e_legend(show = FALSE) %>%
+  e_tooltip()
+
+#-----------------------------------------------------------------------------------#
+
+
+# Top 5 per day of week ------------------------------------------------------------
+
+## Artists
+
+## Tracks
+
+#-----------------------------------------------------------------------------------#

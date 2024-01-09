@@ -7,19 +7,19 @@
 # Exploratory Analyses - Full Year --------------------------------------------------
 
 ## Create list of unique artists
-artists <- unique(raw_stream$artist_name)
+artists <- unique(clean_stream$artist_name)
   #===================================================#
   #   1090 unique artists in 2023 listening history   #
   #===================================================#
 
 ## Create list of unique tracks
-tracks <- unique(raw_stream$track_name)
+tracks <- unique(clean_stream$track_name)
   #===================================================#
   #   2814 unique tracks in 2023 listening history    #
   #===================================================#
 
 ## Total listening time 2023
-listening_ms_23 <- sum(raw_stream$ms_played)
+listening_ms_23 <- sum(clean_stream$ms_played)
   #===================================================#
   #   1,381,530,970 milliseconds listened             #
   #===================================================#
@@ -81,7 +81,25 @@ top_song_by_time <- clean_stream %>%
 ## Is there a difference in the type of music that I listen to at different points in the year?
 
 ## What are my top tracks for each month? top artists? 
+top_tracks_by_month <- clean_stream %>%
+  distinct(track_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(plays_by_track)) %>%
+  top_n(5, plays_by_track) %>%
+  ungroup() %>%
+  select(c("month", "track_name", "plays_by_track")) %>%
+  group_by(month) %>%
+  arrange(month) 
 
+top_artists_by_month <- clean_stream %>%
+  distinct(artist_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(plays_by_artist)) %>%
+  top_n(5, plays_by_artist) %>%
+  ungroup() %>%
+  select(c("month", "artist_name", "plays_by_artist")) %>%
+  group_by(month) %>%
+  arrange(month) 
 #-----------------------------------------------------------------------------------#
 
 
