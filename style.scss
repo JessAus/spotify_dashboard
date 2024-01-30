@@ -1,0 +1,45 @@
+ /*-- scss:defaults --*/
+$navbar-bg: #4cbb17;
+$body-bg: black;
+$link-color: #2FF924;
+$tooltip-bg: #2FF924;
+
+/*-- scss:rules --*/
+
+/* change characteristics of valueboxes */
+.value-box-value {
+	font-size: clamp(.1em, 10cqw, 5em) !important;
+	color: black;
+}
+
+/* change characteristics of tabset panels */
+.tabset {
+	color: white;
+	background: #4cbb17;
+}
+
+/* change characteristics of cards within tabset */
+#card-tabset-4-1 > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+	color: white;
+}
+
+/* change characteristics of tabset text */
+.nav > li:nth-child(1) > a:nth-child(1) {
+	color: white;
+}
+
+/* resize svg logo */ 
+.navbar-logo {
+	width: 2em;
+}
+
+/* change color of expand buttons for exharts4r - 2019 */
+.tabset > bslib-tooltip:nth-child(3) > span:nth-child(2) {
+	background-color: #2FF924;
+}
+
+#card-tabset-4-1 > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > bslib-tooltip:nth-child(2) > span:nth-child(2) {
+	background-color: #2FF924;
+}
+
+/* change color of expand buttons on hover - 2019 */

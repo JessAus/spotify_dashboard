@@ -131,6 +131,90 @@ heatmap1 <- clean_stream %>%
 
 
 
+# Valuebox counts by year -----------------------------------------------------------
+
+## Unique artists
+artists_19 <- clean_stream %>%
+  filter(year == "2019")
+
+artists_19_count <- length(unique(artists_19$master_metadata_album_artist_name))
+
+artists_20 <- clean_stream %>%
+  filter(year == "2020")
+
+artists_20_count <- length(unique(artists_20$master_metadata_album_artist_name))
+
+artists_21 <- clean_stream %>%
+  filter(year == "2021")
+
+artists_21_count <- length(unique(artists_21$master_metadata_album_artist_name))
+
+artists_22 <- clean_stream %>%
+  filter(year == "2022")
+
+artists_22_count <- length(unique(artists_22$master_metadata_album_artist_name))
+
+artists_23 <- clean_stream %>%
+  filter(year == "2023")
+
+artists_23_count <- length(unique(artists_23$master_metadata_album_artist_name))
+
+## Unique tracks
+
+tracks_19 <- clean_stream %>%
+  filter(year == "2019")
+
+tracks_19_count <- length(unique(tracks_19$master_metadata_track_name))
+
+tracks_20 <- clean_stream %>%
+  filter(year == "2020")
+
+tracks_20_count <- length(unique(tracks_20$master_metadata_track_name))
+
+tracks_21 <- clean_stream %>%
+  filter(year == "2021")
+
+tracks_21_count <- length(unique(tracks_21$master_metadata_track_name))
+
+tracks_22 <- clean_stream %>%
+  filter(year == "2022")
+
+tracks_22_count <- length(unique(tracks_22$master_metadata_track_name))
+
+tracks_23 <- clean_stream %>%
+  filter(year == "2023")
+
+tracks_23_count <- length(unique(tracks_23$master_metadata_track_name))
+
+## Unique Albums
+albums_19 <- clean_stream %>%
+  filter(year == "2019")
+
+albums_19_count <- length(unique(albums_19$master_metadata_album_album_name))
+
+albums_20 <- clean_stream %>%
+  filter(year == "2020")
+
+albums_20_count <- length(unique(albums_20$master_metadata_album_album_name))
+
+albums_21 <- clean_stream %>%
+  filter(year == "2021")
+
+albums_21_count <- length(unique(albums_21$master_metadata_album_album_name))
+
+albums_22 <- clean_stream %>%
+  filter(year == "2022")
+
+albums_22_count <- length(unique(albums_22$master_metadata_album_album_name))
+
+albums_23 <- clean_stream %>%
+  filter(year == "2023")
+
+albums_23_count <- length(unique(albums_23$master_metadata_album_album_name))
+
+
+
+
 # Exploratory Analyses - By Day of Week ---------------------------------------------
 
 ## What day of the week do I listen to music the most?
@@ -149,5 +233,5 @@ heatmap1 <- clean_stream %>%
 #==================================================================================================================================#
 
 # Remove df/objects that are no longer needed ---------------------------------------
-rm()
+rm(artists_19)
 #-----------------------------------------------------------------------------------#

@@ -1,34 +1,256 @@
 ---
 title: "Spotify Listening"
-author: "Jessie Ausman"
 format: dashboard
+logo: "spotify.svg"
+theme: 
+  - style.scss
 embed-resources: true
 ---
 
-```{r Load Scripts, echo=FALSE}
-source("~/spotify_dashboard/00_load_and_clean.R", local = knitr::knit_global())
-source("~/spotify_dashboard/01_analysis.R", local = knitr::knit_global())
-source("~/spotify_dashboard/02_visuals.R", local = knitr::knit_global())
+```{r Load scripts, echo=FALSE}
+source("~/spotify_dashboard/scripts/00_load_and_clean.R", local = knitr::knit_global())
+source("~/spotify_dashboard/scripts/01_analysis.R", local = knitr::knit_global())
+source("~/spotify_dashboard/scripts/02_visuals.R", local = knitr::knit_global())
 ```
 
 
-## Quarto
+# 2019
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Row {height="20%"}
 
-## Running Code
+```{r Unique artists 2019, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Artists"
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+list(
+  icon = "music-player-fill",
+  color = "#228B22",
+  value = artists_19_count
+)
 
-```{r}
-1 + 1
 ```
 
-You can add options to executable code like this
+```{r Unique tracks 2019, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Tracks"
 
-```{r}
-#| echo: false
-2 * 2
+list(
+  icon = "file-music-fill",
+  color = "#2FF924",
+  value = tracks_19_count
+)
+
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r Unique albums 2019, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Albums"
+
+list(
+  icon = "vinyl-fill",
+  color = "#98fb98",
+  value = albums_19_count
+)
+
+```
+
+## Row {.tabset height="80%"}
+
+### Heatmap Calendar
+
+```{r Heatmap 2019, echo=FALSE}
+heat_2019
+```
+
+
+# 2020
+
+## Row {height="20%"}
+
+```{r Unique artists 2020, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Artists"
+
+list(
+  icon = "music-player-fill",
+  color = "#228B22",
+  value = artists_20_count
+)
+
+```
+
+```{r Unique tracks 2020, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Tracks"
+
+list(
+  icon = "file-music-fill",
+  color = "#2FF924",
+  value = tracks_20_count
+)
+
+```
+
+```{r Unique albums 2020, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Albums"
+
+list(
+  icon = "vinyl-fill",
+  color = "#98fb98",
+  value = albums_20_count
+)
+
+```
+
+## Row {.tabset height="80%"}
+
+### Heatmap Calendar
+
+```{r Heatmap 2020, echo=FALSE}
+heat_2020
+```
+
+# 2021
+
+## Row {height="20%"}
+
+```{r Unique artists 2021, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Artists"
+
+list(
+  icon = "music-player-fill",
+  color = "#228B22",
+  value = artists_21_count
+)
+
+```
+
+```{r Unique tracks 2021, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Tracks"
+
+list(
+  icon = "file-music-fill",
+  color = "#2FF924",
+  value = tracks_21_count
+)
+
+```
+
+```{r Unique albums 2021, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Albums"
+
+list(
+  icon = "vinyl-fill",
+  color = "#98fb98",
+  value = albums_21_count
+)
+
+```
+
+## Row {.tabset height="80%"}
+
+### Heatmap Calendar
+
+```{r Heatmap 2021, echo=FALSE}
+heat_2021
+```
+
+# 2022
+
+## Row {height="20%"}
+
+```{r Unique artists 2022, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Artists"
+
+list(
+  icon = "music-player-fill",
+  color = "#228B22",
+  value = artists_22_count
+)
+
+```
+
+```{r Unique tracks 2022, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Tracks"
+
+list(
+  icon = "file-music-fill",
+  color = "#2FF924",
+  value = tracks_22_count
+)
+
+```
+
+```{r Unique albums 2022, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Albums"
+
+list(
+  icon = "vinyl-fill",
+  color = "#98fb98",
+  value = albums_22_count
+)
+
+```
+
+## Row {.tabset height="80%"}
+
+### Heatmap Calendar
+
+```{r Heatmap 2022, echo=FALSE}
+heat_2022
+```
+
+# 2023
+
+## Row {height="20%"}
+
+```{r Unique artists 2023, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Artists"
+
+list(
+  icon = "music-player-fill",
+  color = "#228B22",
+  value = artists_23_count
+)
+
+```
+
+```{r Unique tracks 2023, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Tracks"
+
+list(
+  icon = "file-music-fill",
+  color = "#2FF924",
+  value = tracks_23_count
+)
+
+```
+
+```{r Unique albums 2023, echo=FALSE}
+#| component: valuebox
+#| title: "Unique Albums"
+
+list(
+  icon = "vinyl-fill",
+  color = "#98fb98",
+  value = albums_23_count
+)
+
+```
+
+## Row {.tabset height="80%"}
+
+### Heatmap Calendar
+
+```{r Heatmap 2023, echo=FALSE}
+heat_2023
+```

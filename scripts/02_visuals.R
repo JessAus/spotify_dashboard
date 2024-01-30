@@ -42,8 +42,10 @@ heat_2019 <- heatmap1 %>%
   group_by(year) %>%
   e_charts(date) %>%
   e_calendar(range = "2019", top = 40) %>%
-  e_heatmap(min_listen, coord_system = "calendar") %>%
-  e_visual_map(max = 430)
+  e_heatmap(min_listen, coord_system = "calendar",
+            label = list(color = "white")) %>%
+  e_visual_map(max = 430) %>%
+  e_tooltip() 
 
 heat_2020 <- heatmap1 %>%
   ungroup() %>%
@@ -75,7 +77,7 @@ heat_2023 <- heatmap1 %>%
   e_charts(date) %>%
   e_calendar(range = "2023", top = 40) %>%
   e_heatmap(min_listen, coord_system = "calendar") %>%
-  e_visual_map(max = 300)
+  e_visual_map(max = 300) 
 
 #-----------------------------------------------------------------------------------#
 

@@ -5,7 +5,7 @@
 #####################################################################################
 
 # Load req. packages ----------------------------------------------------------------
-pacman::p_load(tidyverse, jsonlite, janitor, lubridate, echarts4r)
+pacman::p_load(tidyverse, jsonlite, janitor, lubridate, echarts4r, fontawesome)
 #-----------------------------------------------------------------------------------#
 
 
