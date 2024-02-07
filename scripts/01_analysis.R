@@ -81,25 +81,135 @@ top_song_by_time <- clean_stream %>%
 ## Is there a difference in the type of music that I listen to at different points in the year?
 
 ## What are my top tracks for each month? top artists? 
-top_tracks_by_month <- clean_stream %>%
+top_tracks_by_month_19 <- clean_stream %>%
+  filter(year == 2019) %>%
+  group_by(master_metadata_track_name) %>%
+  mutate(track_plays = n()) %>%
   distinct(master_metadata_track_name, .keep_all = TRUE) %>%
-  group_by(month_year) %>%
-  arrange(desc(plays_by_track)) %>%
-  top_n(5, plays_by_track) %>%
+  group_by(month) %>%
+  arrange(desc(track_plays)) %>%
+  top_n(1, track_plays) %>%
   ungroup() %>%
-  select(c("month_year", "master_metadata_track_name", "plays_by_track")) %>%
-  group_by(month_year) %>%
-  arrange(month_year) 
+  select(c("month", "master_metadata_track_name", "track_plays")) %>%
+  group_by(month) %>%
+  arrange(month) 
 
-top_artists_by_month <- clean_stream %>%
-  distinct(master_metadata_album_artist_name, .keep_all = TRUE) %>%
-  group_by(month_year) %>%
-  arrange(desc(plays_by_artist)) %>%
-  top_n(5, plays_by_artist) %>%
+top_tracks_by_month_20 <- clean_stream %>%
+  filter(year == 2020) %>%
+  group_by(master_metadata_track_name) %>%
+  mutate(track_plays = n()) %>%
+  distinct(master_metadata_track_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(track_plays)) %>%
+  top_n(1, track_plays) %>%
   ungroup() %>%
-  select(c("month_year", "master_metadata_album_artist_name", "plays_by_artist")) %>%
-  group_by(month_year) %>%
-  arrange(month_year) 
+  select(c("month", "master_metadata_track_name", "track_plays")) %>%
+  group_by(month) %>%
+  arrange(month)
+
+top_tracks_by_month_21 <- clean_stream %>%
+  filter(year == 2021) %>%
+  group_by(master_metadata_track_name) %>%
+  mutate(track_plays = n()) %>%
+  distinct(master_metadata_track_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(track_plays)) %>%
+  top_n(1, track_plays) %>%
+  ungroup() %>%
+  select(c("month", "master_metadata_track_name", "track_plays")) %>%
+  group_by(month) %>%
+  arrange(month)
+
+top_tracks_by_month_22 <- clean_stream %>%
+  filter(year == 2022) %>%
+  group_by(master_metadata_track_name) %>%
+  mutate(track_plays = n()) %>%
+  distinct(master_metadata_track_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(track_plays)) %>%
+  top_n(1, track_plays) %>%
+  ungroup() %>%
+  select(c("month", "master_metadata_track_name", "track_plays")) %>%
+  group_by(month) %>%
+  arrange(month)
+
+top_tracks_by_month_23 <- clean_stream %>%
+  filter(year == 2023) %>%
+  group_by(master_metadata_track_name) %>%
+  mutate(track_plays = n()) %>%
+  distinct(master_metadata_track_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(track_plays)) %>%
+  top_n(1, track_plays) %>%
+  ungroup() %>%
+  select(c("month", "master_metadata_track_name", "track_plays")) %>%
+  group_by(month) %>%
+  arrange(month)
+
+top_artists_by_month_19 <- clean_stream %>%
+  filter(year == 2019) %>%
+  group_by(master_metadata_album_artist_name) %>%
+  mutate(artist_plays = n()) %>%
+  distinct(master_metadata_album_artist_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(artist_plays)) %>%
+  top_n(1, artist_plays) %>%
+  ungroup() %>%
+  select(c("month", "master_metadata_album_artist_name", "artist_plays")) %>%
+  group_by(month) %>%
+  arrange(month) 
+
+top_artists_by_month_20 <- clean_stream %>%
+  filter(year == 2020) %>%
+  group_by(master_metadata_album_artist_name) %>%
+  mutate(artist_plays = n()) %>%
+  distinct(master_metadata_album_artist_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(artist_plays)) %>%
+  top_n(1, artist_plays) %>%
+  ungroup() %>%
+  select(c("month", "master_metadata_album_artist_name", "artist_plays")) %>%
+  group_by(month) %>%
+  arrange(month) 
+
+top_artists_by_month_21 <- clean_stream %>%
+  filter(year == 2021) %>%
+  group_by(master_metadata_album_artist_name) %>%
+  mutate(artist_plays = n()) %>%
+  distinct(master_metadata_album_artist_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(artist_plays)) %>%
+  top_n(1, artist_plays) %>%
+  ungroup() %>%
+  select(c("month", "master_metadata_album_artist_name", "artist_plays")) %>%
+  group_by(month) %>%
+  arrange(month) 
+
+top_artists_by_month_22 <- clean_stream %>%
+  filter(year == 2022) %>%
+  group_by(master_metadata_album_artist_name) %>%
+  mutate(artist_plays = n()) %>%
+  distinct(master_metadata_album_artist_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(artist_plays)) %>%
+  top_n(1, artist_plays) %>%
+  ungroup() %>%
+  select(c("month", "master_metadata_album_artist_name", "artist_plays")) %>%
+  group_by(month) %>%
+  arrange(month) 
+
+top_artists_by_month_23 <- clean_stream %>%
+  filter(year == 2023) %>%
+  group_by(master_metadata_album_artist_name) %>%
+  mutate(artist_plays = n()) %>%
+  distinct(master_metadata_album_artist_name, .keep_all = TRUE) %>%
+  group_by(month) %>%
+  arrange(desc(artist_plays)) %>%
+  top_n(1, artist_plays) %>%
+  ungroup() %>%
+  select(c("month", "master_metadata_album_artist_name", "artist_plays")) %>%
+  group_by(month) %>%
+  arrange(month) 
 
 ## How much total time did I listen each month?
 time_per_month <- clean_stream %>%
